@@ -78,41 +78,39 @@
 
 <p>TODO: Fill this in.</p>
 
-<p><strong>Attributes</strong></p>
-
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Attributes</th>
+<th></th>
 </tr>
 </thead><tbody>
 <tr>
-<td>id</td>
-<td><strong>string</strong></td>
+<td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about the created_at attribute</td>
 </tr>
 <tr>
-<td>created_at</td>
-<td>TODO</td>
+<td><strong>created_at</strong> <div class="attr attr-type">datetime</div></td>
+<td>TODO: Add some info about the attribute</td>
 </tr>
 <tr>
-<td>default</td>
-<td>TODO</td>
+<td><strong>default</strong> <div class="attr attr-type">boolean</div></td>
+<td>TODO: Add some info about the attribute</td>
 </tr>
 <tr>
-<td>name</td>
-<td>TODO</td>
+<td><strong>name</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about the attribute</td>
 </tr>
 <tr>
-<td>site_environments</td>
-<td>TODO</td>
+<td><strong>site_environments</strong></td>
+<td>TODO: Add some info about the attribute</td>
 </tr>
 <tr>
-<td>webhook</td>
-<td>TODO</td>
+<td><strong>webhook</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about the attribute</td>
 </tr>
 <tr>
-<td>webhook_enabled</td>
-<td>TODO</td>
+<td><strong>webhook_enabled</strong> <div class="attr attr-type">boolean</div></td>
+<td>TODO: Add some info about the attribute</td>
 </tr>
 </tbody></table>
 
@@ -144,21 +142,19 @@
 
 <p>TODO: Fill this in.</p>
 
-<p><strong>Arguments</strong></p>
-
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Arguments</th>
+<th></th>
 </tr>
 </thead><tbody>
 <tr>
-<td>default</td>
-<td><strong>boolean</strong> Whether or not this environment should be the default environment.</td>
+<td><strong>default</strong> <div class="attr attr-type">boolean</div></td>
+<td>Whether or not this environment should be the default environment.</td>
 </tr>
 <tr>
-<td>name</td>
-<td><strong>string</strong> The name you want to use for this environment.</td>
+<td><strong>name</strong> <div class="attr attr-type">string</div></td>
+<td>The name you want to use for this environment.</td>
 </tr>
 </tbody></table>
 
@@ -167,8 +163,8 @@
 <span class="nb">require</span> <span class="s1">'rainforest'</span>
 <span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
 
-<span class="n">env_id</span> <span class="o">=</span> <span class="mi">13</span>
-<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="n">env_id</span><span class="p">)</span>
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
 
 
 <span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
@@ -188,17 +184,15 @@
 
 <p>TODO: Fill this in.</p>
 
-<p><strong>Arguments</strong></p>
-
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Arguments</th>
+<th></th>
 </tr>
 </thead><tbody>
 <tr>
-<td>id</td>
-<td><strong>integer</strong> The id of the environment you want to retrieve.</td>
+<td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
+<td>The id of the environment you want to retrieve.</td>
 </tr>
 </tbody></table>
 
@@ -207,10 +201,10 @@
 <span class="nb">require</span> <span class="s1">'rainforest'</span>
 <span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
 
-<span class="n">env_id</span> <span class="o">=</span> <span class="mi">13</span>
-<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">env_id</span><span class="p">,</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"new env name"</span><span class="p">)</span>
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"new env name"</span><span class="p">)</span>
 <span class="c1"># or</span>
-<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environmnet</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="n">env_id</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environmnet</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
 <span class="n">env</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"new env name"</span>
 <span class="n">env</span><span class="p">.</span><span class="nf">save</span>
 
@@ -232,17 +226,19 @@
 
 <p>TODO: Fill this in.</p>
 
-<p><strong>Arguments</strong></p>
-
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Arguments</th>
+<th></th>
 </tr>
 </thead><tbody>
 <tr>
-<td>name</td>
-<td><strong>integer</strong> The id of the environment you want to retrieve.</td>
+<td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
+<td>The id of the environment you want to retrieve.</td>
+</tr>
+<tr>
+<td><strong>name</strong> <div class="attr attr-type">integer</div></td>
+<td>The new name for the environment.</td>
 </tr>
 </tbody></table>
 <pre class="highlight ruby"><code>
