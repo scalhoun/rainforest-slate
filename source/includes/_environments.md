@@ -21,7 +21,7 @@ TODO: Fill this in.
 
 Attributes |           |
 ---------- | --------- |
-**id** <div class="attr attr-required">required</div> <div class="attr attr-type">string</div> | TODO: Add some info about the created_at attribute
+**id** <div class="attr attr-type">string</div> | TODO: Add some info about the created_at attribute
 **created_at** <div class="attr attr-type">datetime</div> | TODO: Add some info about the attribute
 **default** <div class="attr attr-type">boolean</div> | TODO: Add some info about the attribute
 **name** <div class="attr attr-type">string</div> | TODO: Add some info about the attribute
