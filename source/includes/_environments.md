@@ -19,17 +19,15 @@
 
 TODO: Fill this in.
 
-**Attributes**
-
-Parameter | Description
---------- | -----------
-id | **string**
-created_at | TODO
-default | TODO
-name | TODO
-site_environments | TODO
-webhook | TODO
-webhook_enabled | TODO
+Attributes |           |
+---------- | --------- |
+**id** <div class="attr attr-required">required</div> <div class="attr attr-type">string</div> | TODO: Add some info about the created_at attribute
+**created_at** <div class="attr attr-type">datetime</div> | TODO: Add some info about the attribute
+**default** <div class="attr attr-type">boolean</div> | TODO: Add some info about the attribute
+**name** <div class="attr attr-type">string</div> | TODO: Add some info about the attribute
+**site_environments** | TODO: Add some info about the attribute
+**webhook** <div class="attr attr-type">string</div> | TODO: Add some info about the attribute
+**webhook_enabled** <div class="attr attr-type">boolean</div> | TODO: Add some info about the attribute
 
 
 ## Create an Environment
@@ -63,12 +61,10 @@ EXAMPLE RESPONSE
 TODO: Fill this in.
 
 
-**Arguments**
-
-Parameter | Description
---------- | -----------
-default | **boolean** Whether or not this environment should be the default environment.
-name | **string** The name you want to use for this environment.
+Arguments |           |
+--------- | --------- |
+**default** <div class="attr attr-type">boolean</div> | Whether or not this environment should be the default environment.
+**name** <div class="attr attr-type">string</div> | The name you want to use for this environment.
 
 
 ## Retrieve an Environment
@@ -78,8 +74,8 @@ EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
-env_id = 13
-env = Rainforest::Environment.retrieve(env_id)
+id = 13
+env = Rainforest::Environment.retrieve(id)
 
 
 EXAMPLE RESPONSE
@@ -100,11 +96,9 @@ EXAMPLE RESPONSE
 TODO: Fill this in.
 
 
-**Arguments**
-
-Parameter | Description
---------- | -----------
-id | **integer** The id of the environment you want to retrieve.
+Arguments |           |
+--------- | --------- |
+**id** <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div> | The id of the environment you want to retrieve.
 
 
 ## Update an Environment
@@ -114,10 +108,10 @@ EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
-env_id = 13
-env = Rainforest::Environment.update(env_id, :name => "new env name")
+id = 13
+env = Rainforest::Environment.update(id, :name => "new env name")
 # or
-env = Rainforest::Environmnet.retrieve(env_id)
+env = Rainforest::Environmnet.retrieve(id)
 env.name = "new env name"
 env.save
 
@@ -140,11 +134,10 @@ EXAMPLE RESPONSE
 TODO: Fill this in.
 
 
-**Arguments**
-
-Parameter | Description
---------- | -----------
-name | **integer** The id of the environment you want to retrieve.
+Arguments |           |
+--------- | --------- |
+**id** <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div> | The id of the environment you want to retrieve.
+**name** <div class="attr attr-type">integer</div> | The new name for the environment.
 
 ```ruby
 

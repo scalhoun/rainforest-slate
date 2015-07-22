@@ -618,3 +618,15 @@ html, body {
     margin-top: $main-padding;
   }
 }
+
+.attr {
+  text-transform: uppercase;
+}
+
+.attr-type {
+  color: #999;
+}
+
+.attr-required {
+  color: #ffae54;
+}
