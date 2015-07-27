@@ -204,7 +204,7 @@
 <span class="nb">id</span> <span class="o">=</span> <span class="mi">13</span>
 <span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"new env name"</span><span class="p">)</span>
 <span class="c1"># or</span>
-<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environmnet</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
 <span class="n">env</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"new env name"</span>
 <span class="n">env</span><span class="p">.</span><span class="nf">save</span>
 
@@ -259,13 +259,417 @@
 <span class="k">end</span>
 
 <span class="n">envs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># The first environment in the list</span>
-<span class="n">envs</span><span class="p">.</span><span class="nf">length</span> <span class="c1"># the number of environments returns</span>
+<span class="n">envs</span><span class="p">.</span><span class="nf">length</span> <span class="c1"># the number of environments returned</span>
 
 
 <span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
 <span class="c1">#&lt;Rainforest::ApiList[Rainforest::Environment]:0x3ff73d57a598&gt; Data: [</span>
-  <span class="s2">"#&lt;Rainforest::Environment:0x3ff73d577dac id=13&gt;"</span>
+  <span class="s2">"#&lt;Rainforest::Environment:0x3ff73d577dac id=13&gt;"</span><span class="p">,</span>
+  <span class="s2">"#&lt;Rainforest::Environment:0x3ff73d661bb4 id=18&gt;"</span>
 <span class="p">]</span>
+
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<h2 id="delete-an-environment">Delete an Environment</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">env</span><span class="p">.</span><span class="nf">delete</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="p">{}</span>
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<h2 id="list-an-environment-39-s-runs">List an Environment&rsquo;s Runs</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">runs</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="nf">runs</span><span class="p">.</span><span class="nf">all</span>
+<span class="c1"># or</span>
+<span class="n">runs</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">id</span><span class="p">).</span><span class="nf">runs</span><span class="p">.</span><span class="nf">all</span>
+
+<span class="c1"># The list is enumerable and works similarly to an array</span>
+<span class="n">runs</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">run</span><span class="o">|</span>
+  <span class="c1"># work with an run</span>
+<span class="k">end</span>
+
+<span class="n">runs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># The first run in the list</span>
+<span class="n">runs</span><span class="p">.</span><span class="nf">length</span> <span class="c1"># the number of runs</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="o">&lt;</span><span class="no">Rainforest</span><span class="o">::</span><span class="no">ApiList</span><span class="p">[</span><span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">]:</span><span class="mh">0x3ff73d6a52ec</span><span class="o">&gt;</span> <span class="no">Data</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">"#&lt;Rainforest::Run:0x3ff73d678e90 id=4138&gt;"</span><span class="p">,</span>
+  <span class="s2">"#&lt;Rainforest::Run:0x3ff73d661bb4 id=4242&gt;"</span>
+<span class="p">]</span>
+
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+          <h1 id="generators">Generators</h1>
+
+<h2 id="the-generators-object">The Generators Object</h2>
+<pre class="highlight ruby"><code><span class="c1">#&lt;Rainforest::Generator:0x3ff73f454004 id=905&gt; Attributes: {</span>
+  <span class="s2">"columns"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6440</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"first_name"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6441</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"last_name"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6442</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"email"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6443</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"passwword"</span><span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2015-07-27T16:52:13Z"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Credentials used to log into accounts in various states"</span><span class="p">,</span>
+  <span class="s2">"generator_type"</span><span class="p">:</span> <span class="s2">"tabular"</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">905</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"user_credentials"</span><span class="p">,</span>
+  <span class="s2">"row_count"</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Attributes</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>id</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about the created_at attribute</td>
+</tr>
+<tr>
+<td><strong>created_at</strong> <div class="attr attr-type">datetime</div></td>
+<td>TODO: Add some info about the attribute</td>
+</tr>
+<tr>
+<td><strong>name</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about the attribute</td>
+</tr>
+<tr>
+<td><strong>description</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about the attribute</td>
+</tr>
+<tr>
+<td><strong>columns</strong></td>
+<td>TODO: Add some info about the attribute</td>
+</tr>
+<tr>
+<td><strong>generator_type</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about the attribute</td>
+</tr>
+<tr>
+<td><strong>row_count</strong> <div class="attr attr-type">integer</div></td>
+<td>TODO: Add some info about the attribute</td>
+</tr>
+</tbody></table>
+
+<h2 id="create-an-generator">Create an Generator</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="n">gen</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+  <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"user_credentials"</span><span class="p">,</span>
+  <span class="ss">:description</span> <span class="o">=&gt;</span> <span class="s2">"Credentials used to log into accounts in various states"</span><span class="p">,</span>
+  <span class="ss">:columns</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"first_name"</span><span class="p">,</span> <span class="s2">"last_name"</span><span class="p">,</span> <span class="s2">"email"</span><span class="p">,</span> <span class="s2">"passwword"</span><span class="p">]</span>
+<span class="p">)</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Generator:0x3ff73f514d40 id=906&gt; Attributes: {</span>
+  <span class="s2">"columns"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6444</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T17:00:22Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"first_name"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6445</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T17:00:22Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"last_name"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6446</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T17:00:22Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"email"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6447</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T17:00:22Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"passwword"</span><span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2015-07-27T17:00:22Z"</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Credentials used to log into accounts in various states"</span><span class="p">,</span>
+  <span class="s2">"generator_type"</span><span class="p">:</span> <span class="s2">"tabular"</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">906</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"user_credentials_1"</span><span class="p">,</span>
+  <span class="s2">"row_count"</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>name</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">string</div></td>
+<td>The name you want to use for this generator. Can only include letters, numbers, and underscores.</td>
+</tr>
+<tr>
+<td><strong>description</strong> <div class="attr attr-type">string</div></td>
+<td>The human readable description of what this generator is used for.</td>
+</tr>
+<tr>
+<td><strong>columns</strong> <div class="attr attr-type">array[string]</div></td>
+<td>An array of column names used with this generator.</td>
+</tr>
+</tbody></table>
+
+<h2 id="retrieve-an-generator">Retrieve an Generator</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">905</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Generator:0x3ff73fcbdfb0 id=905&gt; Attributes: {</span>
+  <span class="s2">"columns"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6440</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"first_name"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6441</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"last_name"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6442</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"email"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6443</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"passwword"</span><span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2015-07-27T16:52:13Z"</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Credentials used to log into accounts in various states"</span><span class="p">,</span>
+  <span class="s2">"generator_type"</span><span class="p">:</span> <span class="s2">"tabular"</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">905</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"user_credentials"</span><span class="p">,</span>
+  <span class="s2">"row_count"</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
+<td>The id of the generator you want to retrieve.</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-a-generator">Update a Generator</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">905</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="p">{</span>
+  <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"new_gen_name"</span><span class="p">,</span>
+  <span class="ss">:description</span> <span class="o">=&gt;</span> <span class="s2">"Credentials used to log into accounts in various states"</span>
+<span class="p">})</span>
+<span class="c1"># or</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">gen</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"new_gen_name"</span>
+<span class="n">gen</span><span class="p">.</span><span class="nf">save</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Generator:0x3fdb68e27b8c id=905&gt; Attributes: {</span>
+  <span class="s2">"columns"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6440</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"first_name"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6441</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"last_name"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6442</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"email"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6443</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"passwword"</span><span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2015-07-27T16:52:13Z"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Credentials used to log into accounts in various states"</span><span class="p">,</span>
+  <span class="s2">"generator_type"</span><span class="p">:</span> <span class="s2">"tabular"</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">905</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"user_creds"</span><span class="p">,</span>
+  <span class="s2">"row_count"</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
+<td>The id of the generator you want to update.</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Editable Attributes</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>name</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">string</div></td>
+<td>The name of the generator. Can only include letters, numbers, and underscores.</td>
+</tr>
+<tr>
+<td><strong>description</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">string</div></td>
+<td>The description of the generator.</td>
+</tr>
+</tbody></table>
+
+<h2 id="list-all-generators">List all Generators</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="n">gens</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">all</span>
+
+<span class="c1"># The list is enumerable and works similarly to an array</span>
+<span class="n">gens</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">gen</span><span class="o">|</span>
+  <span class="c1"># work with a generator</span>
+<span class="k">end</span>
+
+<span class="n">gens</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># The first generator in the list</span>
+<span class="n">gens</span><span class="p">.</span><span class="nf">length</span> <span class="c1"># the number of generators returned</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::ApiList[Rainforest::Generator]:0x3ff73d57a598&gt; Data: [</span>
+  <span class="s2">"#&lt;Rainforest::Generator:0x3ff73d577dac id=905&gt;"</span><span class="p">,</span>
+  <span class="s2">"#&lt;Rainforest::Generator:0x3ff73d661bb4 id=906&gt;"</span>
+<span class="p">]</span>
+
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<h2 id="delete-a-generator">Delete a Generator</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">906</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">env</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">env</span><span class="p">.</span><span class="nf">delete</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Generator:0x3fdb6955ba70 id=906&gt; Attributes: {</span>
+  <span class="s2">"columns"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6444</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T17:00:22Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"first_name"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6445</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T17:00:22Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"last_name"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6446</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T17:00:22Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"email"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6447</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T17:00:22Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"passwword"</span><span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2015-07-27T17:00:22Z"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Credentials used to log into accounts in various states"</span><span class="p">,</span>
+  <span class="s2">"generator_type"</span><span class="p">:</span> <span class="s2">"tabular"</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">906</span><span class="p">,</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"user_credentials_1"</span><span class="p">,</span>
+  <span class="s2">"row_count"</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<h2 id="list-a-generator-39-s-rows">List a Generator&rsquo;s Rows</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">905</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">gen</span><span class="p">.</span><span class="nf">rows</span><span class="p">.</span><span class="nf">all</span>
+<span class="c1"># or</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">id</span><span class="p">).</span><span class="nf">rows</span><span class="p">.</span><span class="nf">all</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">113914</span><span class="p">,</span>
+    <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="ss">:"6440"</span> <span class="o">=&gt;</span> <span class="s2">"Jon"</span><span class="p">,</span>
+      <span class="ss">:"6441"</span> <span class="o">=&gt;</span> <span class="s2">"Calhoun"</span><span class="p">,</span>
+      <span class="ss">:"6442"</span> <span class="o">=&gt;</span> <span class="s2">"sample@apibits.com"</span><span class="p">,</span>
+      <span class="ss">:"6443"</span> <span class="o">=&gt;</span> <span class="s2">"someSUPERs3cr3tPASSword"</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">113915</span><span class="p">,</span>
+    <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="ss">:"6440"</span> <span class="o">=&gt;</span> <span class="s2">"Pam"</span><span class="p">,</span>
+      <span class="ss">:"6441"</span> <span class="o">=&gt;</span> <span class="s2">"Beesly"</span><span class="p">,</span>
+      <span class="ss">:"6442"</span> <span class="o">=&gt;</span> <span class="s2">"pam@apibits.com"</span><span class="p">,</span>
+      <span class="ss">:"6443"</span> <span class="o">=&gt;</span> <span class="s2">"dundies are great"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<h2 id="create-a-generator-row">Create a Generator Row</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">905</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">row</span> <span class="o">=</span> <span class="n">gen</span><span class="p">.</span><span class="nf">rows</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+  <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="mi">6440</span> <span class="o">=&gt;</span> <span class="s2">"Jerry"</span><span class="p">,</span> <span class="c1"># 6440 is the column id from gen.columns</span>
+    <span class="mi">6441</span> <span class="o">=&gt;</span> <span class="s2">"Seinfeld"</span><span class="p">,</span>
+    <span class="mi">6442</span> <span class="o">=&gt;</span> <span class="s2">"jerry@apibits.com"</span><span class="p">,</span>
+    <span class="mi">6443</span> <span class="o">=&gt;</span> <span class="s2">"fake_password_123"</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">row</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">id</span><span class="p">).</span><span class="nf">rows</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+  <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="mi">6440</span> <span class="o">=&gt;</span> <span class="s2">"Jerry"</span><span class="p">,</span> <span class="c1"># 6440 is the column id from gen.columns</span>
+    <span class="mi">6441</span> <span class="o">=&gt;</span> <span class="s2">"Seinfeld"</span><span class="p">,</span>
+    <span class="mi">6442</span> <span class="o">=&gt;</span> <span class="s2">"jerry@apibits.com"</span><span class="p">,</span>
+    <span class="mi">6443</span> <span class="o">=&gt;</span> <span class="s2">"fake_password_123"</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="p">{</span>
+  <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">113916</span><span class="p">,</span>
+  <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:"6440"</span> <span class="o">=&gt;</span> <span class="s2">"Jerry"</span><span class="p">,</span>
+    <span class="ss">:"6441"</span> <span class="o">=&gt;</span> <span class="s2">"Seinfeld"</span><span class="p">,</span>
+    <span class="ss">:"6442"</span> <span class="o">=&gt;</span> <span class="s2">"jerry@apibits.com"</span><span class="p">,</span>
+    <span class="ss">:"6443"</span> <span class="o">=&gt;</span> <span class="s2">"fake_password_123"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
 
 </code></pre>
