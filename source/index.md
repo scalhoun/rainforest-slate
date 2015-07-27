@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - authentication
   - environments
+  - generators
 
 search: true
 ---
