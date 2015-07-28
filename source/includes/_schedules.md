@@ -38,12 +38,12 @@ schedule = Rainforest::Schedule.create(
   },
   :repeat_rules => [
     {
-      "day": "sunday",
-      "time": "01:00"
+      :day => "sunday",
+      :time => "01:00"
     },
     {
-      "day": "tuesday",
-      "time": "10:00"
+      :day => "tuesday",
+      :time => "10:00"
     }
   ]
 )
