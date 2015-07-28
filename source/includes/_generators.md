@@ -32,7 +32,7 @@ Attributes |           |
 **row_count** <div class="attr attr-type">integer</div> | TODO: Add some info about the attribute
 
 
-## Create an Generator
+## Create a Generator
 
 ```ruby
 EXAMPLE REQUEST
@@ -69,12 +69,12 @@ TODO: Fill this in.
 
 Arguments |           |
 --------- | --------- |
-**name** <div class="attr attr-required">required</div> <div class="attr attr-type">string</div> | The name you want to use for this generator. Can only include letters, numbers, and underscores.
-**description** <div class="attr attr-type">string</div> | The human readable description of what this generator is used for.
+**name** <div class="attr attr-required">required</div> <div class="attr attr-type">string</div> | The name you wat to use for this generator. Ca only include letters, numbers, ad underscores.
+**description** <div class="attr attr-type">string</div> | The huma readable description of what this generator is used for.
 **columns** <div class="attr attr-type">array[string]</div> | An array of column names used with this generator.
 
 
-## Retrieve an Generator
+## Retrieve a Generator
 
 ```ruby
 EXAMPLE REQUEST
@@ -108,7 +108,7 @@ TODO: Fill this in.
 
 Arguments |           |
 --------- | --------- |
-**id** <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div> | The id of the generator you want to retrieve.
+**id** <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div> | The id of the generator you wat to retrieve.
 
 
 ## Update a Generator
@@ -151,12 +151,12 @@ TODO: Fill this in.
 
 Arguments |           |
 --------- | --------- |
-**id** <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div> | The id of the generator you want to update.
+**id** <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div> | The id of the generator you wat to update.
 
 
 Editable Attributes |           |
 ------------------- | --------- |
-**name** <div class="attr attr-required">required</div> <div class="attr attr-type">string</div> | The name of the generator. Can only include letters, numbers, and underscores.
+**name** <div class="attr attr-required">required</div> <div class="attr attr-type">string</div> | The name of the generator. Ca only include letters, numbers, ad underscores.
 **description** <div class="attr attr-required">required</div> <div class="attr attr-type">string</div> | The description of the generator.
 
 
@@ -170,7 +170,7 @@ Rainforest.api_key = "your-api-key"
 
 gens = Rainforest::Generator.all
 
-# The list is enumerable and works similarly to an array
+# The list is enumerable ad works similarly to a array
 gens.each do |gen|
   # work with a generator
 end

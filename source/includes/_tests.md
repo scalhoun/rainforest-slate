@@ -3,42 +3,40 @@
 ## The Test Object
 
 ```ruby
-#<Rainforest::Test:0x3fdcc649c068 id=2181> Attributes: {
+#<Rainforest::Test:0x3fd86d602270 id=17790> Attributes: {
   "browsers": [
     {"name":"android_phone_landscape","description":"Android Phone Landscape","category":"phone","state":"disabled"},
     {"name":"android_phone_portrait","description":"Android Phone Portrait","category":"phone","state":"disabled"},
     {"name":"android_tablet_landscape","description":"Android Tablet Landscape","category":"tablet","state":"disabled"},
     {"name":"android_tablet_portrait","description":"Android Tablet Portrait","category":"tablet","state":"disabled"},
     {"name":"chrome","description":"Google Chrome","category":"browser","state":"enabled"},
-    {"name":"firefox","description":"Mozilla Firefox","category":"browser","state":"enabled"},
+    {"name":"firefox","description":"Mozilla Firefox","category":"browser","state":"disabled"},
     {"name":"ie8","description":"Microsoft Internet Explorer 8","category":"browser","state":"disabled"},
     {"name":"ie9","description":"Microsoft Internet Explorer 9","category":"browser","state":"disabled"},
     {"name":"ie10","description":"Microsoft Internet Explorer 10","category":"browser","state":"disabled"},
     {"name":"ie11","description":"Microsoft Internet Explorer 11","category":"browser","state":"disabled"},
     {"name":"safari","description":"Apple Safari","category":"browser","state":"disabled"}
   ],
-  "created_at": "2013-11-05T04:57:55Z",
+  "created_at": "2015-07-28T15:02:00Z",
   "deletable": true,
   "deleted": false,
-  "description": null,
-  "dry_run_url": "https://tester.rnfrst.com/tester/dry_run/L4nI_HqGn6ZT4fvecPmDng?turkSubmitTo=%2Fthanks",
+  "description": "Make sure all customer logos link to their websites correctly.",
+  "dry_run_url": "https://tester.rainforestqa.com/tester/dry_run/vUu916ScjlWRwZbITsVnRg?turkSubmitTo=%2Fthanks",
   "editable": true,
   "has_been_dry_run": true,
-  "id": 2181,
-  "last_run": {"id":4268,"created_at":"2013-11-14T04:52:14Z","state":"complete"},
-  "result": "failed",
+  "id": 17790,
+  "last_run": {"id":31459,"created_at":"2015-07-28T15:10:06Z","state":"complete"},
+  "result": "passed",
   "run_mode": "default",
   "site_id": 860,
-  "start_uri": "/ghost/signin",
+  "start_uri": "/",
   "step_count": 1,
   "tags": [
-    "ghost",
-    "users"
+    "www"
   ],
-  "test_id": 2181,
-  "title": "Ghost Forgotten Password",
-  "state": null,
-  "quality": "no_data"
+  "test_id": 17790,
+  "title": "Customer Logos",
+  "quality": "acceptable"
 }
 ```
 
