@@ -1,6 +1,6 @@
 # Environments
 
-## The Environments Object
+## The Environment Object
 
 ```ruby
 #<Rainforest::Environment:0x3ff73d710894 id=1> Attributes: {
@@ -139,11 +139,6 @@ Arguments |           |
 **id** <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div> | The id of the environment you want to retrieve.
 **name** <div class="attr attr-type">integer</div> | The new name for the environment.
 
-```ruby
-
-```
-
-TODO: Fill this in.
 
 
 ## List all Environments

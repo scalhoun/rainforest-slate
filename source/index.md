@@ -13,6 +13,9 @@ includes:
   - authentication
   - environments
   - generators
+  - runs
+  - schedules
+  - tests
 
 search: true
 ---

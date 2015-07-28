@@ -1,6 +1,6 @@
 # Generators
 
-## The Generators Object
+## The Generator Object
 
 ```ruby
 #<Rainforest::Generator:0x3ff73f454004 id=905> Attributes: {
