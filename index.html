@@ -61,7 +61,7 @@
 
           <h1 id="environments">Environments</h1>
 
-<h2 id="the-environments-object">The Environments Object</h2>
+<h2 id="the-environment-object">The Environment Object</h2>
 <pre class="highlight ruby"><code><span class="c1">#&lt;Rainforest::Environment:0x3ff73d710894 id=1&gt; Attributes: {</span>
   <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2015-03-18T01:13:52Z"</span><span class="p">,</span>
   <span class="s2">"default"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
@@ -241,10 +241,6 @@
 <td>The new name for the environment.</td>
 </tr>
 </tbody></table>
-<pre class="highlight ruby"><code>
-</code></pre>
-
-<p>TODO: Fill this in.</p>
 
 <h2 id="list-all-environments">List all Environments</h2>
 <pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
@@ -325,7 +321,7 @@
 
           <h1 id="generators">Generators</h1>
 
-<h2 id="the-generators-object">The Generators Object</h2>
+<h2 id="the-generator-object">The Generator Object</h2>
 <pre class="highlight ruby"><code><span class="c1">#&lt;Rainforest::Generator:0x3ff73f454004 id=905&gt; Attributes: {</span>
   <span class="s2">"columns"</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6440</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-27T16:52:13Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"first_name"</span><span class="p">},</span>
@@ -675,6 +671,781 @@
 </code></pre>
 
 <p>TODO: Fill this in.</p>
+
+          <h1 id="runs">Runs</h1>
+
+<h2 id="the-run-object">The Run Object</h2>
+<pre class="highlight ruby"><code><span class="c1">#&lt;Rainforest::Run:0x3fdb69576b04 id=4268&gt; Attributes: {</span>
+  <span class="s2">"browsers"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_phone_landscape"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Phone Landscape"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"phone"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_phone_portrait"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Phone Portrait"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"phone"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_tablet_landscape"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Tablet Landscape"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"tablet"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_tablet_portrait"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Tablet Portrait"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"tablet"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"chrome"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"enabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Google Chrome"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"firefox"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"enabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Mozilla Firefox"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie8"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"enabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 8"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie9"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"enabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 9"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie10"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 10"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie11"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 11"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"safari"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"enabled"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Apple Safari"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2013-11-14T04:52:14Z"</span><span class="p">,</span>
+  <span class="s2">"current_progress"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"percent"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="s2">"total"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">"complete"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">"eta"</span><span class="p">:{</span><span class="s2">"seconds"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">"ts"</span><span class="ss">:"2015-07-27T18:33:20.841+00:00"</span><span class="p">},</span><span class="s2">"no_result"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">"passed"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">"failed"</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"environment"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1144</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2013-11-05T02:17:14Z"</span><span class="p">,</span><span class="s2">"name"</span><span class="ss">:"Staging"</span><span class="p">,</span><span class="s2">"default"</span><span class="ss">:true</span><span class="p">,</span><span class="s2">"webhook"</span><span class="ss">:null</span><span class="p">,</span><span class="s2">"webhook_enabled"</span><span class="ss">:null</span><span class="p">,</span><span class="s2">"site_environments"</span><span class="p">:[{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">744</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2013-11-05T02:17:14Z"</span><span class="p">,</span><span class="s2">"site_id"</span><span class="p">:</span><span class="mi">860</span><span class="p">,</span><span class="s2">"environment_id"</span><span class="p">:</span><span class="mi">1144</span><span class="p">,</span><span class="s2">"url"</span><span class="ss">:"http://apibits.com"</span><span class="p">}]},</span>
+  <span class="s2">"filters"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"frontend_url"</span><span class="p">:</span> <span class="s2">"https://app.rnfrst.com/runs/4268"</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">4268</span><span class="p">,</span>
+  <span class="s2">"log_url"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"real_cost_to_run"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+  <span class="s2">"result"</span><span class="p">:</span> <span class="s2">"failed"</span><span class="p">,</span>
+  <span class="s2">"sample_test_titles"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"super awesome test"</span>
+  <span class="p">],</span>
+  <span class="s2">"state"</span><span class="p">:</span> <span class="s2">"complete"</span><span class="p">,</span>
+  <span class="s2">"state_details"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"complete"</span><span class="p">,</span><span class="s2">"is_final_state"</span><span class="ss">:true</span><span class="p">},</span>
+  <span class="s2">"stats"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"total_time_for_one_person"</span><span class="p">:</span><span class="mi">4675</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="s2">"total_time_for_rainforest"</span><span class="p">:</span><span class="mi">2610</span><span class="o">.</span><span class="mi">763738</span><span class="p">,</span><span class="s2">"total_rainforest_overhead"</span><span class="p">:</span><span class="mi">13</span><span class="o">.</span><span class="mi">591364</span><span class="p">,</span><span class="s2">"speed_up"</span><span class="p">:</span><span class="mi">1</span><span class="o">.</span><span class="mi">79</span><span class="p">},</span>
+  <span class="s2">"timestamps"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"complete"</span><span class="ss">:"2013-11-14T05:35:45.022Z"</span><span class="p">,</span><span class="s2">"in_progress"</span><span class="ss">:"2013-11-14T04:52:27.847Z"</span><span class="p">,</span><span class="s2">"validating"</span><span class="ss">:"2013-11-14T04:52:28.003Z"</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2013-11-14T04:52:14.252Z"</span><span class="p">},</span>
+  <span class="s2">"total_failed_tests"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"total_no_result_tests"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">"total_passed_tests"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">"total_tests"</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Attributes</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>browsers</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">browsers</code></td>
+</tr>
+<tr>
+<td><strong>created_at</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">created_at</code></td>
+</tr>
+<tr>
+<td><strong>current_progress</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">current_progress</code></td>
+</tr>
+<tr>
+<td><strong>description</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">description</code></td>
+</tr>
+<tr>
+<td><strong>environment</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">environment</code></td>
+</tr>
+<tr>
+<td><strong>filters</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">filters</code></td>
+</tr>
+<tr>
+<td><strong>frontend_url</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">frontend_url</code></td>
+</tr>
+<tr>
+<td><strong>id</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">id</code></td>
+</tr>
+<tr>
+<td><strong>log_url</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">log_url</code></td>
+</tr>
+<tr>
+<td><strong>real_cost_to_run</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">real_cost_to_run</code></td>
+</tr>
+<tr>
+<td><strong>result</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">result</code></td>
+</tr>
+<tr>
+<td><strong>sample_test_titles</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">sample_test_titles</code></td>
+</tr>
+<tr>
+<td><strong>state</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">state</code></td>
+</tr>
+<tr>
+<td><strong>state_details</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">state_details</code></td>
+</tr>
+<tr>
+<td><strong>stats</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">stats</code></td>
+</tr>
+<tr>
+<td><strong>timestamps</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">timestamps</code></td>
+</tr>
+<tr>
+<td><strong>total_failed_tests</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">total_failed_tests</code></td>
+</tr>
+<tr>
+<td><strong>total_no_result_tests</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">total_no_result_tests</code></td>
+</tr>
+<tr>
+<td><strong>total_passed_tests</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">total_passed_tests</code></td>
+</tr>
+<tr>
+<td><strong>total_tests</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">total_tests</code></td>
+</tr>
+</tbody></table>
+
+<h2 id="create-a-run">Create a Run</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+  <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"www"</span><span class="p">,</span> <span class="s2">"api"</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">test_ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2818</span><span class="p">]</span>
+<span class="n">run</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+  <span class="ss">:tests</span> <span class="o">=&gt;</span> <span class="n">test_ids</span>
+<span class="p">)</span>
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Run:0x3ff73f514d40 id=906&gt; Attributes: {</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>tags</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">array</div></td>
+<td>The tags you would like to create a run with. <em>NOTE</em>: This is only required when <code class="prettyprint">tests</code> is not provided.</td>
+</tr>
+<tr>
+<td><strong>tests</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">array</div></td>
+<td>The ids of tests you would like to create runs with. <em>NOTE</em>: This is only required when <code class="prettyprint">tags</code> is not provided.</td>
+</tr>
+</tbody></table>
+
+<h2 id="retrieve-a-run">Retrieve a Run</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">905</span>
+<span class="n">run</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Run:0x3ff73fcbdfb0 id=905&gt; Attributes: {</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
+<td>The id of the run you want to retrieve.</td>
+</tr>
+</tbody></table>
+
+<h2 id="list-all-runs">List all Runs</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="n">runs</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">all</span>
+
+<span class="c1"># The list is enumerable and works similarly to a array</span>
+<span class="n">runs</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">run</span><span class="o">|</span>
+  <span class="c1"># work with a run</span>
+<span class="k">end</span>
+
+<span class="n">runs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># The first run in the list</span>
+<span class="n">runs</span><span class="p">.</span><span class="nf">length</span> <span class="c1"># the number of runs returned</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::ApiList[Rainforest::Run]:0x3ff73d57a598&gt; Data: [</span>
+  <span class="s2">"#&lt;Rainforest::Run:0x3ff73d577dac id=905&gt;"</span><span class="p">,</span>
+  <span class="s2">"#&lt;Rainforest::Run:0x3ff73d661bb4 id=906&gt;"</span>
+<span class="p">]</span>
+
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<h2 id="abort-or-delete-a-run">Abort or Delete a Run</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">906</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">abort</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="c1"># or .delete(id)</span>
+<span class="c1"># or</span>
+<span class="n">run</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">run</span><span class="p">.</span><span class="nf">abort</span> <span class="c1"># or .delete</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Run:0x3fdb6955ba70 id=906&gt; Attributes: {</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<h2 id="list-a-run-39-s-tests">List a Run&rsquo;s Tests</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">905</span>
+<span class="n">run</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">tests</span> <span class="o">=</span> <span class="n">run</span><span class="p">.</span><span class="nf">tests</span><span class="p">.</span><span class="nf">all</span>
+<span class="c1"># or</span>
+<span class="n">tests</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">id</span><span class="p">).</span><span class="nf">tests</span><span class="p">.</span><span class="nf">all</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::ApiList[Rainforest::Test]:0x3fdcc5e2223c&gt; Data: [</span>
+  <span class="s2">"#&lt;Rainforest::Test:0x3fdcc5e1f44c id=2181&gt;"</span>
+<span class="p">]</span>
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+          <h1 id="schedules">Schedules</h1>
+
+<h2 id="the-schedule-object">The Schedule Object</h2>
+<pre class="highlight ruby"><code><span class="c1">#&lt;Rainforest::Schedule:0x3fdcc6185a3c id=4&gt; Attributes: {</span>
+  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2015-03-25T00:19:56Z"</span><span class="p">,</span>
+  <span class="s2">"filters"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"tests"</span><span class="p">:[</span><span class="s2">"all"</span><span class="p">]},</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+  <span class="s2">"repeat_rules"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-03-25T00:19:56Z"</span><span class="p">,</span><span class="s2">"day"</span><span class="ss">:"wednesday"</span><span class="p">,</span><span class="s2">"time"</span><span class="ss">:"01:01"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-03-25T00:19:56Z"</span><span class="p">,</span><span class="s2">"day"</span><span class="ss">:"monday"</span><span class="p">,</span><span class="s2">"time"</span><span class="ss">:"01:01"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-03-25T00:19:56Z"</span><span class="p">,</span><span class="s2">"day"</span><span class="ss">:"sunday"</span><span class="p">,</span><span class="s2">"time"</span><span class="ss">:"01:01"</span><span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Attributes</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>created_at</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">created_at</code></td>
+</tr>
+<tr>
+<td><strong>filters</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">filters</code></td>
+</tr>
+<tr>
+<td><strong>id</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">id</code></td>
+</tr>
+<tr>
+<td><strong>repeat_rules</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">repeat_rules</code></td>
+</tr>
+</tbody></table>
+
+<h2 id="create-a-schedule">Create a Schedule</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="n">schedule</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Schedule</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+  <span class="ss">:filters</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"www"</span><span class="p">,</span> <span class="s2">"api"</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="ss">:repeat_rules</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"day"</span><span class="p">:</span> <span class="s2">"sunday"</span><span class="p">,</span>
+      <span class="s2">"time"</span><span class="p">:</span> <span class="s2">"01:00"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"day"</span><span class="p">:</span> <span class="s2">"tuesday"</span><span class="p">,</span>
+      <span class="s2">"time"</span><span class="p">:</span> <span class="s2">"10:00"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Schedule:0x3ff73f514d40 id=906&gt; Attributes: {</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>filters</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">array</div></td>
+<td>TODO: Fill this in.</td>
+</tr>
+<tr>
+<td><strong>repeat_rules</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">array</div></td>
+<td>TODO: Fill this in.</td>
+</tr>
+</tbody></table>
+
+<h2 id="retrieve-a-schedule">Retrieve a Schedule</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">905</span>
+<span class="n">schedule</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Schedule</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Schedule:0x3ff73fcbdfb0 id=905&gt; Attributes: {</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
+<td>The id of the schedule you want to retrieve.</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-a-schedule">Update a Schedule</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">repeat_rules</span> <span class="o">=</span> <span class="p">[{</span><span class="ss">:day</span> <span class="o">=&gt;</span> <span class="s2">"monday"</span><span class="p">,</span> <span class="ss">:time</span> <span class="o">=&gt;</span> <span class="s2">"12:00"</span><span class="p">}]</span>
+<span class="n">schedule</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Schedule</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="ss">:repeat_rules</span> <span class="o">=&gt;</span> <span class="n">repeat_rules</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">schedule</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Schedule</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">schedule</span><span class="p">.</span><span class="nf">repeat_rules</span> <span class="o">=</span> <span class="n">repeat_rules</span>
+<span class="n">schedule</span><span class="p">.</span><span class="nf">save</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Schedule:0x3ff73d6c9d18 id=13&gt; Attributes: {</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
+<td>The id of the schedule you want to update.</td>
+</tr>
+<tr>
+<td><strong>repeat_rules</strong> <div class="attr attr-type">array[repeat_rule]</div></td>
+<td>TODO: Fill this in.</td>
+</tr>
+<tr>
+<td><strong>filters</strong> <div class="attr attr-type">hash</div></td>
+<td>TODO: Fill this in.</td>
+</tr>
+</tbody></table>
+
+<h2 id="list-all-schedules">List all Schedules</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="n">schedules</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Schedule</span><span class="p">.</span><span class="nf">all</span>
+
+<span class="c1"># The list is enumerable and works similarly to a array</span>
+<span class="n">schedules</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">schedule</span><span class="o">|</span>
+  <span class="c1"># work with a schedule</span>
+<span class="k">end</span>
+
+<span class="n">schedules</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># The first schedule in the list</span>
+<span class="n">schedules</span><span class="p">.</span><span class="nf">length</span> <span class="c1"># the number of schedules returned</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::ApiList[Rainforest::Schedule]:0x3ff73d57a598&gt; Data: [</span>
+  <span class="s2">"#&lt;Rainforest::Schedule:0x3ff73d577dac id=905&gt;"</span><span class="p">,</span>
+  <span class="s2">"#&lt;Rainforest::Schedule:0x3ff73d661bb4 id=906&gt;"</span>
+<span class="p">]</span>
+
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<h2 id="delete-a-schedule">Delete a Schedule</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">906</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Schedule</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">schedule</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Schedule</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">schedule</span><span class="p">.</span><span class="nf">delete</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Schedule:0x3fdb6955ba70 id=906&gt; Attributes: {</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+          <h1 id="tests">Tests</h1>
+
+<h2 id="the-test-object">The Test Object</h2>
+<pre class="highlight ruby"><code><span class="c1">#&lt;Rainforest::Test:0x3fdcc649c068 id=2181&gt; Attributes: {</span>
+  <span class="s2">"browsers"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_phone_landscape"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Phone Landscape"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"phone"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_phone_portrait"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Phone Portrait"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"phone"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_tablet_landscape"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Tablet Landscape"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"tablet"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_tablet_portrait"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Tablet Portrait"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"tablet"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"chrome"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Google Chrome"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"enabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"firefox"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Mozilla Firefox"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"enabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie8"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 8"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie9"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 9"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie10"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 10"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie11"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 11"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"safari"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Apple Safari"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2013-11-05T04:57:55Z"</span><span class="p">,</span>
+  <span class="s2">"deletable"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+  <span class="s2">"deleted"</span><span class="p">:</span> <span class="kp">false</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"dry_run_url"</span><span class="p">:</span> <span class="s2">"https://tester.rnfrst.com/tester/dry_run/L4nI_HqGn6ZT4fvecPmDng?turkSubmitTo=%2Fthanks"</span><span class="p">,</span>
+  <span class="s2">"editable"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+  <span class="s2">"has_been_dry_run"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">2181</span><span class="p">,</span>
+  <span class="s2">"last_run"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4268</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2013-11-14T04:52:14Z"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"complete"</span><span class="p">},</span>
+  <span class="s2">"result"</span><span class="p">:</span> <span class="s2">"failed"</span><span class="p">,</span>
+  <span class="s2">"run_mode"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
+  <span class="s2">"site_id"</span><span class="p">:</span> <span class="mi">860</span><span class="p">,</span>
+  <span class="s2">"start_uri"</span><span class="p">:</span> <span class="s2">"/ghost/signin"</span><span class="p">,</span>
+  <span class="s2">"step_count"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"tags"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"ghost"</span><span class="p">,</span>
+    <span class="s2">"users"</span>
+  <span class="p">],</span>
+  <span class="s2">"test_id"</span><span class="p">:</span> <span class="mi">2181</span><span class="p">,</span>
+  <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Ghost Forgotten Password"</span><span class="p">,</span>
+  <span class="s2">"state"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+  <span class="s2">"quality"</span><span class="p">:</span> <span class="s2">"no_data"</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Attributes</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>browsers</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">browsers</code></td>
+</tr>
+<tr>
+<td><strong>created_at</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">created_at</code></td>
+</tr>
+<tr>
+<td><strong>deletable</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">deletable</code></td>
+</tr>
+<tr>
+<td><strong>deleted</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">deleted</code></td>
+</tr>
+<tr>
+<td><strong>description</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">description</code></td>
+</tr>
+<tr>
+<td><strong>dry_run_url</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">dry_run_url</code></td>
+</tr>
+<tr>
+<td><strong>editable</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">editable</code></td>
+</tr>
+<tr>
+<td><strong>has_been_dry_run</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">has_been_dry_run</code></td>
+</tr>
+<tr>
+<td><strong>id</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">id</code></td>
+</tr>
+<tr>
+<td><strong>last_run</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">last_run</code></td>
+</tr>
+<tr>
+<td><strong>result</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">result</code></td>
+</tr>
+<tr>
+<td><strong>run_mode</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">run_mode</code></td>
+</tr>
+<tr>
+<td><strong>site_id</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">site_id</code></td>
+</tr>
+<tr>
+<td><strong>start_uri</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">start_uri</code></td>
+</tr>
+<tr>
+<td><strong>step_count</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">step_count</code></td>
+</tr>
+<tr>
+<td><strong>tags</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">tags</code></td>
+</tr>
+<tr>
+<td><strong>test_id</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">test_id</code></td>
+</tr>
+<tr>
+<td><strong>title</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">title</code></td>
+</tr>
+<tr>
+<td><strong>state</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">state</code></td>
+</tr>
+<tr>
+<td><strong>quality</strong> <div class="attr attr-type">string</div></td>
+<td>TODO: Add some info about <code class="prettyprint">quality</code></td>
+</tr>
+</tbody></table>
+
+<h2 id="create-a-test">Create a Test</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+
+<span class="nb">test</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Test</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+  <span class="c1"># TODO: Fill this in.</span>
+<span class="p">)</span>
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Test:0x3ff73f514d40 id=906&gt; Attributes: {</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>start_uri</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">string</div></td>
+<td>TODO: Fill this in.</td>
+</tr>
+</tbody></table>
+
+<h2 id="retrieve-a-test">Retrieve a Test</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">905</span>
+<span class="nb">test</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Test</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Test:0x3ff73fcbdfb0 id=905&gt; Attributes: {</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
+<td>The id of the test you want to retrieve.</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-a-test">Update a Test</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="c1"># TODO: Fill this in</span>
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="nb">test</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Test</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="ss">:title</span> <span class="o">=&gt;</span> <span class="s2">"New Test Title"</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="nb">test</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Test</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="nb">test</span><span class="p">.</span><span class="nf">title</span> <span class="o">=</span> <span class="s2">"New Test Title"</span>
+<span class="nb">test</span><span class="p">.</span><span class="nf">save</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Test:0x3ff73d6c9d18 id=13&gt; Attributes: {</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<table><thead>
+<tr>
+<th>Arguments</th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
+<td>The id of the test you want to update.</td>
+</tr>
+<tr>
+<td><strong>repeat_rules</strong> <div class="attr attr-type">array[repeat_rule]</div></td>
+<td>TODO: Fill this in.</td>
+</tr>
+<tr>
+<td><strong>filters</strong> <div class="attr attr-type">hash</div></td>
+<td>TODO: Fill this in.</td>
+</tr>
+</tbody></table>
+
+<h2 id="list-all-tests">List all Tests</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="n">tests</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Test</span><span class="p">.</span><span class="nf">all</span>
+
+<span class="c1"># The list is enumerable and works similarly to a array</span>
+<span class="n">tests</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">test</span><span class="o">|</span>
+  <span class="c1"># work with a test</span>
+<span class="k">end</span>
+
+<span class="n">tests</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># The first test in the list</span>
+<span class="n">tests</span><span class="p">.</span><span class="nf">length</span> <span class="c1"># the number of tests returned</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::ApiList[Rainforest::Test]:0x3ff73d57a598&gt; Data: [</span>
+  <span class="s2">"#&lt;Rainforest::Test:0x3ff73d577dac id=905&gt;"</span><span class="p">,</span>
+  <span class="s2">"#&lt;Rainforest::Test:0x3ff73d661bb4 id=2181&gt;"</span>
+<span class="p">]</span>
+
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<h2 id="delete-a-test">Delete a Test</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">906</span>
+<span class="n">response</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Test</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="nb">test</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Test</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="nb">test</span><span class="p">.</span><span class="nf">delete</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="c1">#&lt;Rainforest::Test:0x3fdb6955ba70 id=906&gt; Attributes: {</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<p>TODO: Fill this in.</p>
+
+<h2 id="list-a-test-39-s-history">List a Test&rsquo;s History</h2>
+<pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
+<span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="nb">test</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Test</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">runs</span> <span class="o">=</span> <span class="nb">test</span><span class="p">.</span><span class="nf">history</span>
+<span class="c1"># or</span>
+<span class="n">runs</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Environment</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">id</span><span class="p">).</span><span class="nf">history</span>
+
+<span class="c1"># The list is enumerable and works similarly to an array</span>
+<span class="n">runs</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">run</span><span class="o">|</span>
+  <span class="c1"># work with an run</span>
+<span class="k">end</span>
+
+<span class="n">runs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># The first run in the list</span>
+<span class="n">runs</span><span class="p">.</span><span class="nf">length</span> <span class="c1"># the number of runs</span>
+
+
+<span class="no">EXAMPLE</span> <span class="no">RESPONSE</span>
+<span class="o">&lt;</span><span class="no">Rainforest</span><span class="o">::</span><span class="no">ApiList</span><span class="p">[</span><span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">]:</span><span class="mh">0x3ff73d6a52ec</span><span class="o">&gt;</span> <span class="no">Data</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">"#&lt;Rainforest::Run:0x3ff73d678e90 id=4138&gt;"</span><span class="p">,</span>
+  <span class="s2">"#&lt;Rainforest::Run:0x3ff73d661bb4 id=4242&gt;"</span>
+<span class="p">]</span>
+
+
+</code></pre>
+
+<p>A test&rsquo;s history is a list of runs associated with that test.</p>
+
+<p>TODO: Finish this.</p>
 
       </div>
       <div class="dark-box">
