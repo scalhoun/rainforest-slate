@@ -23,7 +23,7 @@ search: true
 
 Welcome to the Rainforest API.
 
-## Authentication
+# Authentication
 
 ```ruby
 require 'rainforest'
@@ -35,7 +35,7 @@ Rainforest.api_key = 'your-api-key'
 Rainforest uses API keys to allow access to the API. You can find your API key in the [integrations](https://app.rnfrst.com/settings/integrations) section of Rainforest.
 
 
-## Pagination
+# Pagination
 
 ```ruby
 require 'rainforest'
