@@ -34,7 +34,7 @@ Rainforest.api_key = "your-api-key"
 
 schedule = Rainforest::Schedule.create(
   :filters => {
-    :tags => ["www", "api"]
+    :tags => ["www"]
   },
   :repeat_rules => [
     {
@@ -49,7 +49,14 @@ schedule = Rainforest::Schedule.create(
 )
 
 EXAMPLE RESPONSE
-#<Rainforest::Schedule:0x3ff73f514d40 id=906> Attributes: {
+#<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":945,"created_at":"2015-07-28T17:01:43Z","day":"tuesday","time":"10:00"},
+    {"id":944,"created_at":"2015-07-28T17:01:43Z","day":"sunday","time":"01:00"}
+  ]
 }
 ```
 
@@ -69,12 +76,19 @@ EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
-id = 905
+id = 222
 schedule = Rainforest::Schedule.retrieve(id)
 
 
 EXAMPLE RESPONSE
-#<Rainforest::Schedule:0x3ff73fcbdfb0 id=905> Attributes: {
+#<Rainforest::Schedule:0x3fd870165f98 id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":945,"created_at":"2015-07-28T17:01:43Z","day":"tuesday","time":"10:00"},
+    {"id":944,"created_at":"2015-07-28T17:01:43Z","day":"sunday","time":"01:00"}
+  ]
 }
 ```
 
@@ -93,7 +107,7 @@ EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
-id = 13
+id = 222
 repeat_rules = [{:day => "monday", :time => "12:00"}]
 schedule = Rainforest::Schedule.update(id, :repeat_rules => repeat_rules)
 # or
@@ -103,7 +117,13 @@ schedule.save
 
 
 EXAMPLE RESPONSE
-#<Rainforest::Schedule:0x3ff73d6c9d18 id=13> Attributes: {
+#<Rainforest::Schedule:0x3fd8701bddec id=222> Attributes: {
+  "created_at": "2015-07-28T17:01:43Z",
+  "filters": {"tags":["www"]},
+  "id": 222,
+  "repeat_rules": [
+    {"id":946,"created_at":"2015-07-28T17:06:08Z","day":"monday","time":"12:00"}
+  ]
 }
 ```
 
@@ -153,7 +173,7 @@ EXAMPLE REQUEST
 require 'rainforest'
 Rainforest.api_key = "your-api-key"
 
-id = 906
+id = 223
 response = Rainforest::Schedule.delete(id)
 # or
 schedule = Rainforest::Schedule.retrieve(id)
@@ -161,7 +181,14 @@ schedule.delete
 
 
 EXAMPLE RESPONSE
-#<Rainforest::Schedule:0x3fdb6955ba70 id=906> Attributes: {
+#<Rainforest::Schedule:0x3ff930ff8930 id=223> Attributes: {
+  "created_at": "2015-07-28T17:11:54Z",
+  "filters": {"tags":["www"]},
+  "id": 223,
+  "repeat_rules": [
+    {"id":950,"created_at":"2015-07-28T17:11:54Z","day":"tuesday","time":"10:00"},
+    {"id":949,"created_at":"2015-07-28T17:11:54Z","day":"sunday","time":"01:00"}
+  ]
 }
 
 ```
