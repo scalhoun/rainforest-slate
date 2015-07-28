@@ -70,7 +70,7 @@ TODO: Fill this in.
 Arguments |           |
 --------- | --------- |
 **name** <div class="attr attr-required">required</div> <div class="attr attr-type">string</div> | The name you wat to use for this generator. Ca only include letters, numbers, ad underscores.
-**description** <div class="attr attr-type">string</div> | The huma readable description of what this generator is used for.
+**description** <div class="attr attr-type">string</div> | The human readable description of what this generator is used for.
 **columns** <div class="attr attr-type">array[string]</div> | An array of column names used with this generator.
 
 

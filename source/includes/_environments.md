@@ -63,8 +63,10 @@ TODO: Fill this in.
 
 Arguments |           |
 --------- | --------- |
+**name** <div class="attr attr-required">required</div> <div class="attr attr-type">string</div> | The name you want to use for this environment.
 **default** <div class="attr attr-type">boolean</div> | Whether or not this environment should be the default environment.
-**name** <div class="attr attr-type">string</div> | The name you want to use for this environment.
+**webhook** <div class="attr attr-type">string</div> | TODO: Fill this in.
+**webhook_enabled** <div class="attr attr-type">boolean</div> | TODO: Fill this in.
 
 
 ## Retrieve an Environment
