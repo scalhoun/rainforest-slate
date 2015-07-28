@@ -48,7 +48,7 @@
 
 <p>Welcome to the Rainforest API.</p>
 
-          <h1 id="authentication">Authentication</h1>
+<h2 id="authentication">Authentication</h2>
 <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rainforest'</span>
 <span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s1">'your-api-key'</span>
 </code></pre>
@@ -58,6 +58,15 @@
 </blockquote>
 
 <p>Rainforest uses API keys to allow access to the API. You can find your API key in the <a href="https://app.rnfrst.com/settings/integrations">integrations</a> section of Rainforest.</p>
+
+<h2 id="pagination">Pagination</h2>
+<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rainforest'</span>
+<span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s1">'your-api-key'</span>
+
+<span class="n">runs_pg_2</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Run</span><span class="p">.</span><span class="nf">all</span><span class="p">(</span><span class="ss">:page</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre>
+
+<p>Nearly all API calls used to list a resource support pagination. To specify your page simply pass in the <code class="prettyprint">page</code> parameter.</p>
 
           <h1 id="environments">Environments</h1>
 
@@ -376,7 +385,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="create-an-generator">Create an Generator</h2>
+<h2 id="create-a-generator">Create a Generator</h2>
 <pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
 <span class="nb">require</span> <span class="s1">'rainforest'</span>
 <span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
@@ -416,11 +425,11 @@
 </thead><tbody>
 <tr>
 <td><strong>name</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">string</div></td>
-<td>The name you want to use for this generator. Can only include letters, numbers, and underscores.</td>
+<td>The name you wat to use for this generator. Ca only include letters, numbers, ad underscores.</td>
 </tr>
 <tr>
 <td><strong>description</strong> <div class="attr attr-type">string</div></td>
-<td>The human readable description of what this generator is used for.</td>
+<td>The huma readable description of what this generator is used for.</td>
 </tr>
 <tr>
 <td><strong>columns</strong> <div class="attr attr-type">array[string]</div></td>
@@ -428,7 +437,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="retrieve-an-generator">Retrieve an Generator</h2>
+<h2 id="retrieve-a-generator">Retrieve a Generator</h2>
 <pre class="highlight ruby"><code><span class="no">EXAMPLE</span> <span class="no">REQUEST</span>
 <span class="nb">require</span> <span class="s1">'rainforest'</span>
 <span class="no">Rainforest</span><span class="p">.</span><span class="nf">api_key</span> <span class="o">=</span> <span class="s2">"your-api-key"</span>
@@ -465,7 +474,7 @@
 </thead><tbody>
 <tr>
 <td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
-<td>The id of the generator you want to retrieve.</td>
+<td>The id of the generator you wat to retrieve.</td>
 </tr>
 </tbody></table>
 
@@ -512,7 +521,7 @@
 </thead><tbody>
 <tr>
 <td><strong>id</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">integer</div></td>
-<td>The id of the generator you want to update.</td>
+<td>The id of the generator you wat to update.</td>
 </tr>
 </tbody></table>
 
@@ -524,7 +533,7 @@
 </thead><tbody>
 <tr>
 <td><strong>name</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">string</div></td>
-<td>The name of the generator. Can only include letters, numbers, and underscores.</td>
+<td>The name of the generator. Ca only include letters, numbers, ad underscores.</td>
 </tr>
 <tr>
 <td><strong>description</strong> <div class="attr attr-required">required</div> <div class="attr attr-type">string</div></td>
@@ -539,7 +548,7 @@
 
 <span class="n">gens</span> <span class="o">=</span> <span class="no">Rainforest</span><span class="o">::</span><span class="no">Generator</span><span class="p">.</span><span class="nf">all</span>
 
-<span class="c1"># The list is enumerable and works similarly to an array</span>
+<span class="c1"># The list is enumerable ad works similarly to a array</span>
 <span class="n">gens</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">gen</span><span class="o">|</span>
   <span class="c1"># work with a generator</span>
 <span class="k">end</span>
@@ -1140,42 +1149,40 @@
           <h1 id="tests">Tests</h1>
 
 <h2 id="the-test-object">The Test Object</h2>
-<pre class="highlight ruby"><code><span class="c1">#&lt;Rainforest::Test:0x3fdcc649c068 id=2181&gt; Attributes: {</span>
+<pre class="highlight ruby"><code><span class="c1">#&lt;Rainforest::Test:0x3fd86d602270 id=17790&gt; Attributes: {</span>
   <span class="s2">"browsers"</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_phone_landscape"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Phone Landscape"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"phone"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_phone_portrait"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Phone Portrait"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"phone"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_tablet_landscape"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Tablet Landscape"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"tablet"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"android_tablet_portrait"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Android Tablet Portrait"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"tablet"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"chrome"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Google Chrome"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"enabled"</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"firefox"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Mozilla Firefox"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"enabled"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"firefox"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Mozilla Firefox"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie8"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 8"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie9"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 9"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie10"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 10"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"ie11"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Microsoft Internet Explorer 11"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"name"</span><span class="ss">:"safari"</span><span class="p">,</span><span class="s2">"description"</span><span class="ss">:"Apple Safari"</span><span class="p">,</span><span class="s2">"category"</span><span class="ss">:"browser"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"disabled"</span><span class="p">}</span>
   <span class="p">],</span>
-  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2013-11-05T04:57:55Z"</span><span class="p">,</span>
+  <span class="s2">"created_at"</span><span class="p">:</span> <span class="s2">"2015-07-28T15:02:00Z"</span><span class="p">,</span>
   <span class="s2">"deletable"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
   <span class="s2">"deleted"</span><span class="p">:</span> <span class="kp">false</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">"dry_run_url"</span><span class="p">:</span> <span class="s2">"https://tester.rnfrst.com/tester/dry_run/L4nI_HqGn6ZT4fvecPmDng?turkSubmitTo=%2Fthanks"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Make sure all customer logos link to their websites correctly."</span><span class="p">,</span>
+  <span class="s2">"dry_run_url"</span><span class="p">:</span> <span class="s2">"https://tester.rainforestqa.com/tester/dry_run/vUu916ScjlWRwZbITsVnRg?turkSubmitTo=%2Fthanks"</span><span class="p">,</span>
   <span class="s2">"editable"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
   <span class="s2">"has_been_dry_run"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
-  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">2181</span><span class="p">,</span>
-  <span class="s2">"last_run"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4268</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2013-11-14T04:52:14Z"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"complete"</span><span class="p">},</span>
-  <span class="s2">"result"</span><span class="p">:</span> <span class="s2">"failed"</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="p">:</span> <span class="mi">17790</span><span class="p">,</span>
+  <span class="s2">"last_run"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">31459</span><span class="p">,</span><span class="s2">"created_at"</span><span class="ss">:"2015-07-28T15:10:06Z"</span><span class="p">,</span><span class="s2">"state"</span><span class="ss">:"complete"</span><span class="p">},</span>
+  <span class="s2">"result"</span><span class="p">:</span> <span class="s2">"passed"</span><span class="p">,</span>
   <span class="s2">"run_mode"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
   <span class="s2">"site_id"</span><span class="p">:</span> <span class="mi">860</span><span class="p">,</span>
-  <span class="s2">"start_uri"</span><span class="p">:</span> <span class="s2">"/ghost/signin"</span><span class="p">,</span>
+  <span class="s2">"start_uri"</span><span class="p">:</span> <span class="s2">"/"</span><span class="p">,</span>
   <span class="s2">"step_count"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="s2">"tags"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="s2">"ghost"</span><span class="p">,</span>
-    <span class="s2">"users"</span>
+    <span class="s2">"www"</span>
   <span class="p">],</span>
-  <span class="s2">"test_id"</span><span class="p">:</span> <span class="mi">2181</span><span class="p">,</span>
-  <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Ghost Forgotten Password"</span><span class="p">,</span>
-  <span class="s2">"state"</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-  <span class="s2">"quality"</span><span class="p">:</span> <span class="s2">"no_data"</span>
+  <span class="s2">"test_id"</span><span class="p">:</span> <span class="mi">17790</span><span class="p">,</span>
+  <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Customer Logos"</span><span class="p">,</span>
+  <span class="s2">"quality"</span><span class="p">:</span> <span class="s2">"acceptable"</span>
 <span class="p">}</span>
 </code></pre>
 
