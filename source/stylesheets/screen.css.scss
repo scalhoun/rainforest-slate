@@ -71,6 +71,8 @@ html, body {
   background-color: $nav-bg;
   font-size: 13px;
   font-weight: bold;
+  border-right: 1px solid $nav-border-right-color;
+
 
   // language selector for mobile devices
   .lang-selector {
@@ -82,9 +84,20 @@ html, body {
   }
 
   // This is the logo at the top of the ToC
-  &>img {
-    display: block;
+
+  &>.logo {
+    width: 100%;
+    background-color: $logo-bg;
+    //background: url(../images/geometric@1x.jpg);
+    border-bottom: 3px solid $logo-border-color;
+
+    &>img {
+      padding: 10px;
+      display: block;
+    }
   }
+
+
 
   &>.search {
     position: relative;
@@ -93,10 +106,11 @@ html, body {
       background: $nav-bg;
       border-width: 0 0 1px 0;
       border-color: $search-box-border-color;
-      padding: 6px 0 6px 20px;
+      padding: 15px 0 15px 35px;
       box-sizing: border-box;
-      margin: $nav-v-padding $nav-padding;
-      width: $nav-width - 30;
+      //margin: $nav-v-padding $nav-padding;
+      margin-bottom: 10px;
+      width: $nav-width;
       outline: none;
       color: $nav-text;
       border-radius: 0; /* ios has a default border radius */
@@ -104,7 +118,7 @@ html, body {
 
     &:before {
       position: absolute;
-      top: 17px;
+      top: 16px;
       left: $nav-padding;
       color: $nav-text;
       @extend %icon-search;
@@ -129,7 +143,7 @@ html, body {
       margin-bottom: 1em;
     }
 
-    @include embossed-bg;
+    //@include embossed-bg;
 
     li {
       margin: 1em $nav-padding;
@@ -162,7 +176,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 38px;
   }
 
   li {
@@ -190,11 +204,11 @@ html, body {
       font-size: 12px;
     }
 
-    // for embossed look:
-    @include embossed-bg;
-    &>li:last-child {
-      box-shadow: none; // otherwise it'll overflow out of the subheader
-    }
+    // // for embossed look:
+    // @include embossed-bg;
+    // &>li:last-child {
+    //   box-shadow: none; // otherwise it'll overflow out of the subheader
+    // }
   }
 
   .toc-footer {
@@ -284,7 +298,8 @@ html, body {
   .lang-selector {
     position: fixed;
     z-index: 50;
-    border-bottom: 5px solid $lang-select-active-bg;
+    //border-bottom: 5px solid $lang-select-active-bg;
+    padding: 5px 20px;
   }
 }
 
@@ -298,8 +313,16 @@ html, body {
     color: $lang-select-text;
     text-decoration: none;
     padding: 0 10px;
+    margin: 5px 5px;
     line-height: 30px;
     outline: 0;
+    border: 1px solid $lang-select-bg;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: none;
+      border: 1px solid #333;
+    }
 
     &:active, &:focus {
       background-color: $lang-select-pressed-bg;
@@ -328,6 +351,11 @@ html, body {
   // to place content above the dark box
   position: relative;
   z-index: 30;
+
+  a, a:active {
+    color: $main-link-text;
+    text-decoration: none;
+  }
 
   &:after {
     content: '';
@@ -359,7 +387,7 @@ html, body {
     font-size: 30px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid #ccc;
+    //border-bottom: 1px solid #ccc;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
     border-top: 1px solid #ddd;
@@ -523,7 +551,7 @@ html, body {
 
 .content {
   pre, blockquote {
-    background-color: $code-bg;
+    //background-color: $code-bg;
     color: #fff;
 
     padding: 2em $main-padding;
@@ -549,16 +577,21 @@ html, body {
 
   pre {
     @extend %code-font;
+    background-color: $code-annotation-bg;
+    //border-radius: 5px;
+    //padding: $code-annotation-padding;
+    color: #ccc;
+    //border-top: 1px solid #000;
+    //border-bottom: 1px solid #404040;
+  }
+
+  blockquote {
+    padding-bottom: 1em;
   }
 
   blockquote {
     &>p {
-      background-color: $code-annotation-bg;
-      border-radius: 5px;
-      padding: $code-annotation-padding;
-      color: #ccc;
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #404040;
+      padding: .5em 0 .5em 0;
     }
   }
 }
@@ -617,16 +650,4 @@ html, body {
   %right-col + %left-col {
     margin-top: $main-padding;
   }
-}
-
-.attr {
-  text-transform: uppercase;
-}
-
-.attr-type {
-  color: #999;
-}
-
-.attr-required {
-  color: #ffae54;
 }
